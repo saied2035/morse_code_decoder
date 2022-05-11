@@ -20,7 +20,8 @@ end
 
 def decode(morse_sentence)
   words = morse_sentence.split('   ')
-  decoded_words = ''
-  words.each { |word| decoded_words = "#{decoded_words} #{decode_word(word)}" }
-  decoded_words
+  decoded_words = []
+  words.each { |word| decoded_words.push(decode_word(word)) }
+  puts decoded_words.join(" ")
+  decoded_words.join(" ")
 end
