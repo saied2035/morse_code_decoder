@@ -3,7 +3,7 @@ def decode_char(morse_char)
     '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D',
     '.' => 'E', '..-.' => 'F', '--.' => 'G', '....' => 'H',
     '..' => 'I', '.---' => 'J', '-.-' => 'K', '.-..' => 'L',
-    '--' => 'M', '---' => 'O', '.--.' => 'P', '--.-' => 'Q',
+    '--' => 'M', '-.' => 'N', '---' => 'O', '.--.' => 'P', '--.-' => 'Q',
     '.-.' => 'R', '...' => 'S', '-' => 'T', '..-' => 'U',
     '...-' => 'V', '.--' => 'W', '-..-' => 'X', '-.--' => 'Y',
     '--..' => 'Z'
@@ -14,6 +14,13 @@ end
 def decode_word(morse_word)
   characters = morse_word.split
   decoded_character = ''
-  characters.each { |char| decoded_character += decode_char(char) }
+  characters.each { |char| decoded_character = "#{decoded_character}#{decode_char(char)}" }
   decoded_character
+end
+
+def decode(morse_sentence)
+  words = morse_sentence.split('   ')
+  decoded_words = ''
+  words.each { |word| decoded_words = "#{decoded_words} #{decode_word(word)}" }
+  decoded_words
 end
