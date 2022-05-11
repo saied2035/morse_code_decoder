@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/MorseDecoder)
+![](https://img.shields.io/badge/MorseDecoder-blue)
 
 # Morse Decoder
 
