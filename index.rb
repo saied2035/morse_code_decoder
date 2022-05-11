@@ -1,3 +1,5 @@
+
+def decode_char(morse_char)
 morse_code_hash = {  
 	'.-' => 'A' ,
 	'-...' => 'B',
@@ -24,4 +26,6 @@ morse_code_hash = {
 	'-..-' => 'X',
 	'-.--' => 'Y',
 	'--..' => 'Z'
-} 
+}	
+return morse_code_hash[morse_char]
+end 
